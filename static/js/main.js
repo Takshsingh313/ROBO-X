@@ -1,11 +1,4 @@
-/* ==========================================================================
-   ROBO-X CLUB — Client Interaction Logic
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // ----------------------------------------------------------------------
-    // 1. Dark / Light Theme Controller
-    // ----------------------------------------------------------------------
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
@@ -24,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----------------------------------------------------------------------
-    // 2. Mobile Navigation Drawer
-    // ----------------------------------------------------------------------
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const navLinks = document.getElementById('nav-links');
 
@@ -42,9 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----------------------------------------------------------------------
-    // 3. Notification Dropdown Toggle
-    // ----------------------------------------------------------------------
     const notificationIcon = document.getElementById('notification-icon');
     const notificationDropdown = document.getElementById('notification-dropdown');
 
@@ -61,9 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----------------------------------------------------------------------
-    // 4. Team Member Interactive Modal
-    // ----------------------------------------------------------------------
     const teamCards = document.querySelectorAll('.team-card-item');
     const modalOverlay = document.getElementById('member-modal');
     const modalCloseBtn = document.getElementById('modal-close');
@@ -123,9 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ----------------------------------------------------------------------
-    // 6. FAQ Accordion Toggle
-    // ----------------------------------------------------------------------
     const faqQuestions = document.querySelectorAll('.faq-question');
     if (faqQuestions.length) {
         faqQuestions.forEach(btn => {
@@ -133,10 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const item = btn.closest('.faq-item');
                 const isActive = item.classList.contains('active');
                 
-                // Close all items
                 document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
                 
-                // Toggle clicked item
                 if (!isActive) {
                     item.classList.add('active');
                 }

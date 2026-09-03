@@ -8,7 +8,7 @@ def index():
 
 @app.route('/activities')
 def activities():
-    return render_template('index.html') # Placeholder for now
+    return render_template('index.html')
 
 @app.route('/join')
 def join():

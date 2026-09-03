@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Projects Section -->
 <section class="gnb-frame-section" style="padding: 3.5rem 0;">
     <div style="max-width: 960px; margin: 0 auto 1rem auto;">
         <a href="javascript:window.history.length > 1 ? window.history.back() : window.location.href='/'" class="gnb-btn" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
@@ -14,10 +13,8 @@
         <p class="gnb-section-sub">Open-source robotics, UAV engineering, and autonomous hardware built by our core team.</p>
     </div>
 
-    <!-- Featured Project: LOS Drone -->
     <div class="gnb-card" style="max-width: 960px; margin: 0 auto 2.5rem auto; padding: 2rem;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
-            <!-- Left Info -->
             <div>
                 <span class="gnb-tag gnb-tag-red" style="margin-bottom: 1rem;">
                     <i class="fa-solid fa-fire"></i> FEATURED HARDWARE • CORE TEAM R&amp;D
@@ -66,7 +63,6 @@
                 </div>
             </div>
 
-            <!-- Right Showcase Media Image -->
             <div style="border: var(--border-thick); box-shadow: var(--shadow-md); overflow: hidden; background-color: var(--bg-alt);">
                 <img src="{{ url_for('static', filename='images/club_launch_highlights.jpg') }}" alt="Robo-X Core Team LOS Drone Showcase" style="width: 100%; display: block; object-fit: cover;">
                 <div style="padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; background-color: var(--bg-card); border-top: var(--border-thin);">
@@ -76,7 +72,6 @@
         </div>
     </div>
 
-    <!-- Back Action Bar -->
     <div style="text-align: center;">
         <a href="/workshop" class="gnb-btn" style="margin-right: 0.5rem;">
             <i class="fa-solid fa-screwdriver-wrench"></i> <span>EXPLORE WORKSHOPS</span>

@@ -2,36 +2,27 @@
 
 {% block content %}
 
-<!-- Floating 3D Interactive Hardware Background Assets (Native Transparent PNGs on Viewport Outer Corners) -->
 <div class="gnb-floating-3d-assets">
-    <!-- Top-Left ESP32 Microchip -->
     <div class="floating-3d-item floating-esp32" title="ESP32-WROOM-32 Microcontroller">
         <img src="{{ url_for('static', filename='images/esp32_3d.png') }}" alt="ESP32 3D Chip">
     </div>
 
-    <!-- Bottom-Left Custom Drone Arm Leg with Scroll-Spinning 3D Propeller (User's Custom Sketch Asset) -->
     <div class="floating-3d-item floating-propeller-leg" id="scroll-propeller" title="Drone Arm Leg Propeller (Spins on Scroll)">
-        <!-- Stationary Carbon Drone Arm Leg -->
         <img src="{{ url_for('static', filename='images/drone_arm_body.png') }}" alt="Drone Arm Leg" class="drone-arm-leg-img">
-        <!-- Rotating 3-Blade Propeller attached to Motor Hub -->
         <img src="{{ url_for('static', filename='images/drone_propeller_blades.png') }}" alt="3D Propeller" id="propeller-img" class="drone-propeller-blades-img">
     </div>
 
-    <!-- Top-Right Raspberry Pi 4 -->
     <div class="floating-3d-item floating-raspi" title="Raspberry Pi 4 Model B">
         <img src="{{ url_for('static', filename='images/raspberry_pi_3d.png') }}" alt="Raspberry Pi 4">
     </div>
 
-    <!-- Middle-Right Quadcopter Drone Sketch -->
     <div class="floating-3d-item floating-drone" title="Quadcopter Drone Blueprint">
         <img src="{{ url_for('static', filename='images/drone_3d.png') }}" alt="Quadcopter Drone 3D">
     </div>
 </div>
 
-<!-- Hero Section -->
 <section id="home" class="gnb-hero-section gnb-frame-section">
     <div class="gnb-hero-grid">
-        <!-- Hero Left Column -->
         <div class="gnb-hero-text">
             <div class="gnb-hero-tag-row">
                 <span class="gnb-tag"><i class="fa-solid fa-microchip"></i> HARDWARE &amp; ROBOTICS CLUB</span>
@@ -67,10 +58,8 @@
             </div>
         </div>
 
-        <!-- Hero Right Column: 3 Tilted Overlapping Photo Card Stack (Matching reference image) -->
         <div class="gnb-hero-visual">
             <div class="hero-photo-stack">
-                <!-- Photo Card 1 (Top Left Tilted) -->
                 <div class="photo-card photo-card-1">
                     <div class="photo-placeholder-box">
                         <i class="fa-solid fa-camera photo-icon"></i>
@@ -79,7 +68,6 @@
                     </div>
                 </div>
 
-                <!-- Photo Card 2 (Middle Right Tilted) -->
                 <div class="photo-card photo-card-2">
                     <div class="photo-placeholder-box">
                         <i class="fa-solid fa-robot photo-icon"></i>
@@ -88,7 +76,6 @@
                     </div>
                 </div>
 
-                <!-- Photo Card 3 (Bottom Left Tilted) -->
                 <div class="photo-card photo-card-3">
                     <div class="photo-placeholder-box">
                         <i class="fa-solid fa-users photo-icon"></i>
@@ -101,7 +88,6 @@
     </div>
 </section>
 
-<!-- About / Identity Section (LEARN | INNOVATE | GROW matching logo) -->
 <section id="about" class="gnb-identity-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-compass"></i> IDENTITY &amp; VISION</span>
@@ -109,7 +95,6 @@
         <p class="gnb-section-sub">Empowering engineering minds to create, innovate, and lead the future of robotics.</p>
     </div>
 
-    <!-- Pipeline Grid -->
     <div class="gnb-pipeline-grid">
         <div class="gnb-card gnb-pipeline-card">
             <div class="pipeline-icon-box"><i class="fa-solid fa-book-open"></i></div>
@@ -130,7 +115,6 @@
         </div>
     </div>
 
-    <!-- Core Values -->
     <div class="gnb-values-grid">
         <div class="gnb-card gnb-value-card">
             <i class="fa-regular fa-lightbulb"></i>
@@ -152,7 +136,6 @@
     </div>
 </section>
 
-<!-- Featured Events Section -->
 <section id="countdown" class="gnb-event-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-calendar-star"></i> EVENTS &amp; ACTIVITIES</span>
@@ -160,7 +143,6 @@
         <p class="gnb-section-sub">Recent highlights and upcoming robotics workshops across Chandigarh University.</p>
     </div>
 
-    <!-- Main Orientation Event Card -->
     <div class="gnb-event-card">
         <div class="gnb-status-pill">
             <i class="fa-solid fa-circle-check" style="font-size: 0.75rem; color: #ffffff;"></i> COMPLETED • BATCH 2026-27
@@ -200,9 +182,7 @@
             <span class="gnb-tag"><i class="fa-solid fa-users"></i> 500+ Attendees</span>
         </div>
 
-        <!-- Community Impact Stats Bar & Right Side Image Showcase Row -->
         <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 1rem; margin-bottom: 1.25rem;">
-            <!-- Left: Stat Counters Box (Compact, ends in line with tags above) -->
             <div style="display: flex; align-items: center; gap: 1.5rem; padding: 0.75rem 1.15rem; background-color: var(--bg-alt); border: var(--border-thin); flex-shrink: 0;">
                 <div>
                     <span style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 900; color: var(--accent-red); display: block; line-height: 1;">500+</span>
@@ -215,7 +195,6 @@
                 </div>
             </div>
 
-            <!-- Right: Image Showcase Box (Matching stats box height perfectly!) -->
             <div style="flex: 1; min-width: 180px; border: var(--border-thin); overflow: hidden; position: relative; background-color: var(--bg-card); box-shadow: 2px 2px 0px 0px var(--border-color);">
                 <img src="{{ url_for('static', filename='images/club_launch_highlights.jpg') }}" alt="Event Highlights" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(18, 20, 24, 0.85); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; color: var(--text-main); padding: 0.15rem 0.35rem; text-align: center;">
@@ -231,7 +210,6 @@
         </div>
     </div>
 
-    <!-- Explore More Events Banner Box -->
     <div class="gnb-card" style="max-width: 900px; margin: 1.25rem auto 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; padding: 1.15rem 1.5rem; background-color: var(--bg-alt); border: var(--border-mid);">
         <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 42px; height: 42px; background-color: var(--accent-red); color: #ffffff; display: flex; align-items: center; justify-content: center; border: var(--border-thin); font-size: 1.15rem; flex-shrink: 0;">
@@ -253,7 +231,6 @@
     </div>
 </section>
 
-<!-- Activities Section -->
 <section id="activities" class="gnb-activities-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-cubes"></i> CORE PROGRAMS</span>
@@ -297,7 +274,6 @@
     </div>
 </section>
 
-<!-- Learning Roadmap -->
 <section id="roadmap" class="gnb-roadmap-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-map-location-dot"></i> CURRICULUM</span>
@@ -309,7 +285,6 @@
     </div>
 
     <div class="gnb-roadmap-grid">
-        <!-- Level 1: Beginner -->
         <div class="gnb-card roadmap-card-box">
             <div>
                 <span class="gnb-tag">BEGINNER</span>
@@ -332,7 +307,6 @@
             </div>
         </div>
 
-        <!-- Level 2: Intermediate -->
         <div class="gnb-card roadmap-card-box">
             <div>
                 <span class="gnb-tag">INTERMEDIATE</span>
@@ -355,7 +329,6 @@
             </div>
         </div>
 
-        <!-- Level 3: Advanced -->
         <div class="gnb-card roadmap-card-box">
             <div>
                 <span class="gnb-tag">ADVANCED</span>
@@ -378,7 +351,6 @@
             </div>
         </div>
 
-        <!-- Level 4: Expert -->
         <div class="gnb-card roadmap-card-box">
             <div>
                 <span class="gnb-tag gnb-tag-red">EXPERT</span>
@@ -403,7 +375,6 @@
     </div>
 </section>
 
-<!-- Team Section -->
 <section id="team" class="gnb-team-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-users"></i> LEADERSHIP &amp; FACULTY</span>
@@ -411,7 +382,6 @@
         <p class="gnb-section-sub">Meet the mentors and student leaders driving innovation at Robo-X.</p>
     </div>
 
-    <!-- Faculty -->
     <div class="gnb-team-label"><i class="fa-solid fa-graduation-cap"></i> FACULTY MENTORS</div>
     <div class="gnb-team-grid">
         <div class="gnb-card team-card-item" 
@@ -439,7 +409,6 @@
         </div>
     </div>
 
-    <!-- Leadership -->
     <div class="gnb-team-label"><i class="fa-solid fa-user-gear"></i> STUDENT LEADERSHIP</div>
     <div class="gnb-team-grid">
         <div class="gnb-card team-card-item" 
@@ -479,7 +448,6 @@
         </div>
     </div>
 
-    <!-- Team Member Modal -->
     <div class="member-modal-overlay" id="member-modal">
         <div class="member-modal">
             <button class="modal-close" id="modal-close" aria-label="Close Dialog"><i class="fa-solid fa-xmark"></i></button>
@@ -496,7 +464,6 @@
     </div>
 </section>
 
-<!-- FAQ Accordion Section -->
 <section id="faq" class="gnb-faq-section gnb-frame-section">
     <div class="gnb-section-head">
         <span class="gnb-tag"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED QUESTIONS</span>
@@ -505,7 +472,6 @@
     </div>
 
     <div class="gnb-faq-container">
-        <!-- FAQ Item 1 -->
         <div class="gnb-card faq-item">
             <button class="faq-question" type="button" aria-expanded="false">
                 <span>WHO CAN JOIN ROBO-X?</span>
@@ -516,7 +482,6 @@
             </div>
         </div>
 
-        <!-- FAQ Item 2 -->
         <div class="gnb-card faq-item">
             <button class="faq-question" type="button" aria-expanded="false">
                 <span>ARE THE HACKATHONS AND WORKSHOPS FREE?</span>
@@ -527,7 +492,6 @@
             </div>
         </div>
 
-        <!-- FAQ Item 3 -->
         <div class="gnb-card faq-item">
             <button class="faq-question" type="button" aria-expanded="false">
                 <span>WHAT MAKES ROBO-X DIFFERENT FROM OTHER STUDENT GROUPS?</span>
@@ -538,7 +502,6 @@
             </div>
         </div>
 
-        <!-- FAQ Item 4 -->
         <div class="gnb-card faq-item">
             <button class="faq-question" type="button" aria-expanded="false">
                 <span>HOW DO I GET STARTED AND ATTEND WORKSHOPS?</span>
@@ -551,7 +514,6 @@
     </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact" class="gnb-contact-section gnb-frame-section">
     <div class="gnb-card contact-card-outer">
         <span class="gnb-tag" style="margin-bottom: 1rem;"><i class="fa-solid fa-paper-plane"></i> GET IN TOUCH</span>

@@ -1,7 +1,3 @@
-/* ==========================================================================
-   ROBO-X CLUB — Floating Section Instructor Buddy (Scroll-Driven Mascot)
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
     const speechBox = document.getElementById('mascot-side-speech');
     const speechTag = document.getElementById('speech-side-tag');
@@ -10,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!speechTag || !speechText) return;
 
-    // Section Content Dictionary
     const sectionGuides = {
         'home': {
             tag: 'WELCOME',
@@ -44,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentSectionId = 'home';
 
-    // IntersectionObserver to detect current active section on scroll
     const sections = document.querySelectorAll('section[id]');
     
     const observerOptions = {
@@ -80,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 150);
     }
 
-    // Mascot Click Interaction
     const bonusQuotes = [
         "\"Hardware + Code = Pure Magic 🤖\"",
         "\"Tip: Click on any skill pill in the roadmap to watch video tutorials!\"",

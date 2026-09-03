@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROBO-X Club | Chandigarh University</title>
 
-    <!-- Google Fonts (Syne, Anton, Playfair Display Italic, Bodoni Moda Italic, Lobster Two, Lobster, Pacifico, Plus Jakarta Sans, JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@1,6..96,600;1,6..96,700;1,6..96,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800;900&family=Lobster&family=Lobster+Two:ital,wght@1,700&family=Pacifico&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
 
-    <!-- Early Theme Initialization (Default Off-White) -->
     <script>
         (function() {
             const savedTheme = localStorage.getItem('robox-theme');
@@ -34,10 +30,8 @@
 </head>
 
 <body class="gnb-body">
-    <!-- Header Row: Top Left CU Logo, Center Navbar, Top Right ROBO-X Logo -->
     <header class="gnb-header-fixed">
         <div class="header-row-wrapper">
-            <!-- Top Left: Back Arrow Button (Only shown on inner pages) & Chandigarh University Logo -->
             <div style="display: flex; align-items: center; gap: 0.65rem;">
                 {% if request.path != '/' %}
                 <button type="button" onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" class="gnb-btn-icon" title="Go Back" aria-label="Go Back" style="width: 40px; height: 40px; font-size: 1.1rem; border: var(--border-thick); background-color: var(--bg-card); box-shadow: var(--shadow-sm); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-main); transition: transform 0.15s ease;">
@@ -49,9 +43,7 @@
                 </a>
             </div>
 
-            <!-- Center: Sleek Navigation Bar -->
             <nav class="gnb-navbar">
-                <!-- Navigation Links -->
                 <div class="gnb-nav-links" id="nav-links">
                     <a href="/" class="gnb-nav-link active"><span class="gnb-link-text">Home</span></a>
                     <a href="#about" class="gnb-nav-link"><span class="gnb-link-text">About</span></a>
@@ -62,15 +54,12 @@
                     <a href="#contact" class="gnb-nav-link"><span class="gnb-link-text">Contact</span></a>
                 </div>
 
-                <!-- Header Actions -->
                 <div class="gnb-header-actions">
-                    <!-- Dark/Light Theme Toggle -->
                     <button class="gnb-btn-icon" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
                         <i class="fa-solid fa-moon icon-moon"></i>
                         <i class="fa-solid fa-sun icon-sun"></i>
                     </button>
 
-                    <!-- Notifications -->
                     <div class="gnb-notice-wrapper">
                         <button class="gnb-btn-icon" id="notification-icon" title="Notifications" aria-label="Notifications">
                             <i class="fa-solid fa-bell"></i>
@@ -93,31 +82,26 @@
                         </div>
                     </div>
 
-                    <!-- Join Button (Signature Logo Red) -->
                     <a href="/join" class="gnb-btn gnb-btn-red gnb-join-btn">
                         <span>JOIN NOW</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
 
-                    <!-- Mobile Hamburger Button -->
                     <button class="gnb-btn-icon gnb-hamburger" id="hamburger-menu" aria-label="Toggle Menu">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </nav>
 
-            <!-- Top Right: ROBO-X Logo (No TM) -->
             <a href="/" class="corner-logo-box corner-logo-right" title="ROBO-X Club" aria-label="ROBO-X Club">
                 <img src="{{ url_for('static', filename='images/robox_no_tm.png') }}" alt="ROBO-X Logo" class="corner-img-robox">
             </a>
         </div>
     </header>
 
-    <!-- Main Wrapper -->
     <main id="main-content" class="gnb-main-wrapper">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Floating Side Mascot Instructor Buddy (Section Scroll Guide) -->
     <div id="side-mascot-instructor" class="side-mascot-wrapper">
         <div class="mascot-side-speech" id="mascot-side-speech">
             <span class="speech-tag-side" id="speech-side-tag">WELCOME</span>
@@ -129,10 +113,8 @@
         </div>
     </div>
 
-    <!-- Custom ROBO-X Neo-Brutalist Footer -->
     <footer class="gnb-footer">
         <div class="gnb-footer-inner">
-            <!-- Club Info Banner -->
             <div class="gnb-trust-center">
                 <div class="trust-head">
                     <div class="trust-pill">
@@ -142,7 +124,6 @@
                 </div>
             </div>
 
-            <!-- Footer Columns -->
             <div class="gnb-footer-columns">
                 <div class="footer-col-main">
                     <div class="footer-logo-row">
@@ -189,7 +170,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/features.js') }}"></script>
     <script src="{{ url_for('static', filename='js/guide.js') }}"></script>
