@@ -18,6 +18,10 @@ def join():
 def workshop():
     return render_template('workshop.html')
 
+@app.route('/orientation')
+def orientation():
+    return render_template('orientation.html')
+
 @app.route('/hackathon')
 def hackathon():
     return render_template('coming_soon.html', 
@@ -26,9 +30,12 @@ def hackathon():
 
 @app.route('/projects')
 def projects():
-    return render_template('coming_soon.html',
-                         page_title="Projects",
-                         quote="The best way to predict the future is to invent it.")
+    return render_template('projects.html')
+
+@app.route('/coc')
+def coc():
+    return render_template('coc.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+

@@ -1,120 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robo-X Club</title>
+    <title>ROBO-X Club | Chandigarh University</title>
+
+    <!-- Google Fonts (Syne, Anton, Playfair Display Italic, Bodoni Moda Italic, Lobster Two, Lobster, Pacifico, Plus Jakarta Sans, JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@1,6..96,600;1,6..96,700;1,6..96,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800;900&family=Lobster&family=Lobster+Two:ital,wght@1,700&family=Pacifico&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Poppins:wght@500;600;700;800;900&family=Outfit:wght@400;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Early Theme Initialization (Default Off-White) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('robox-theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            }
+        })();
+    </script>
 </head>
 
-<body>
-
-
-
-    <nav class="doodle-nav">
-        <a href="/" class="logo-container" aria-label="Go to home page">
-            <img src="{{ url_for('static', filename='images/university_logo.png') }}" alt="University Logo"
-                class="uni-logo">
-            <img src="{{ url_for('static', filename='images/robox.png') }}" alt="Robo-X Logo" class="robox-logo">
-        </a>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="#activities">Activities</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
-
-            <a href="/join" class="btn-join">Join Us</a>
-            <!-- Theme Toggle -->
-            <button class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun"></i>
-            </button>
-        </div>
-
-        <!-- Notification Icon (Floating below navbar) -->
-        <div class="notification-container">
-            <div class="nav-notification-icon" id="notification-icon">
-                <i class="fa-solid fa-bell"></i>
+<body class="gnb-body">
+    <!-- Header Row: Top Left CU Logo, Center Navbar, Top Right ROBO-X Logo -->
+    <header class="gnb-header-fixed">
+        <div class="header-row-wrapper">
+            <!-- Top Left: Back Arrow Button (Only shown on inner pages) & Chandigarh University Logo -->
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
+                {% if request.path != '/' %}
+                <button type="button" onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" class="gnb-btn-icon" title="Go Back" aria-label="Go Back" style="width: 40px; height: 40px; font-size: 1.1rem; border: var(--border-thick); background-color: var(--bg-card); box-shadow: var(--shadow-sm); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-main); transition: transform 0.15s ease;">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                {% endif %}
+                <a href="/" class="corner-logo-box corner-logo-left" title="Chandigarh University" aria-label="Chandigarh University">
+                    <img src="{{ url_for('static', filename='images/university_logo.png') }}" alt="Chandigarh University Logo" class="corner-img-uni">
+                </a>
             </div>
-            <div class="notification-dropdown" id="notification-dropdown">
-                <div class="notification-header">
-                    <h4>Notifications</h4>
+
+            <!-- Center: Sleek Navigation Bar -->
+            <nav class="gnb-navbar">
+                <!-- Navigation Links -->
+                <div class="gnb-nav-links" id="nav-links">
+                    <a href="/" class="gnb-nav-link active"><span class="gnb-link-text">Home</span></a>
+                    <a href="#about" class="gnb-nav-link"><span class="gnb-link-text">About</span></a>
+                    <a href="#activities" class="gnb-nav-link"><span class="gnb-link-text">Activities</span></a>
+                    <a href="#roadmap" class="gnb-nav-link"><span class="gnb-link-text">Roadmap</span></a>
+                    <a href="#team" class="gnb-nav-link"><span class="gnb-link-text">Team</span></a>
+                    <a href="#faq" class="gnb-nav-link"><span class="gnb-link-text">FAQ</span></a>
+                    <a href="#contact" class="gnb-nav-link"><span class="gnb-link-text">Contact</span></a>
                 </div>
-                <div class="notification-body">
-                    <div class="notification-item" style="text-align: center; color: #999; padding: 1.5rem;">
-                        <i class="fa-solid fa-bell-slash" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                        <p style="margin: 0;">No new notifications</p>
+
+                <!-- Header Actions -->
+                <div class="gnb-header-actions">
+                    <!-- Dark/Light Theme Toggle -->
+                    <button class="gnb-btn-icon" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                    </button>
+
+                    <!-- Notifications -->
+                    <div class="gnb-notice-wrapper">
+                        <button class="gnb-btn-icon" id="notification-icon" title="Notifications" aria-label="Notifications">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="gnb-dot"></span>
+                        </button>
+                        <div class="gnb-notice-dropdown" id="notification-dropdown">
+                            <div class="gnb-dropdown-header">
+                                <span class="mono-tag">robox_updates.py</span>
+                                <h5>System Notifications</h5>
+                            </div>
+                            <div class="gnb-dropdown-body">
+                                <div class="gnb-notice-item">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                    <div>
+                                        <h6>Orientation 2026-27</h6>
+                                        <p>Classes scheduled for 29 & 30 July 2026 across CU classrooms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hamburger Menu for Mobile -->
-        <div class="hamburger-menu" id="hamburger-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
 
-    <main>
+                    <!-- Join Button (Signature Logo Red) -->
+                    <a href="/join" class="gnb-btn gnb-btn-red gnb-join-btn">
+                        <span>JOIN NOW</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button class="gnb-btn-icon gnb-hamburger" id="hamburger-menu" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Top Right: ROBO-X Logo (No TM) -->
+            <a href="/" class="corner-logo-box corner-logo-right" title="ROBO-X Club" aria-label="ROBO-X Club">
+                <img src="{{ url_for('static', filename='images/robox_no_tm.png') }}" alt="ROBO-X Logo" class="corner-img-robox">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main id="main-content" class="gnb-main-wrapper">
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="doodle-footer">
-        <div class="footer-content">
-            <!-- Column 1: About -->
-            <div class="footer-col about-col">
-                <div class="footer-logo">
-                    <img src="{{ url_for('static', filename='images/university_logo.png') }}" alt="Logo"
-                        class="footer-logo-img">
-                    <img src="{{ url_for('static', filename='images/footer logo .jpeg') }}" alt="Robo-X Logo"
-                        class="footer-robox-logo">
-                </div>
-                <p>Building a vibrant community of developers, innovators, and tech enthusiasts at Chandigarh
-                    University. Together, we learn, build, and grow.</p>
-            </div>
-
-            <!-- Column 2: Quick Links -->
-            <div class="footer-col links-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="/join">Join Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Contact -->
-            <div class="footer-col contact-col">
-                <h3>Contact Info</h3>
-                <p><i class="fa-solid fa-envelope"></i> roboxclubcu@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Chandigarh University, Unnao</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/roboxclub_cu?igsh=MXIyMjVpbWlhZmo2Zw==" target="_blank" style="text-decoration: none; font-size: 0.95rem;"><i
-                            class="fa-brands fa-instagram"></i> Follow us on Instagram</a>
-                </div>
-            </div>
+    <!-- Floating Side Mascot Instructor Buddy (Section Scroll Guide) -->
+    <div id="side-mascot-instructor" class="side-mascot-wrapper">
+        <div class="mascot-side-speech" id="mascot-side-speech">
+            <span class="speech-tag-side" id="speech-side-tag">WELCOME</span>
+            <p id="speech-side-text">"One click closer to building something that moves."</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Robo-X Chandigarh University</p>
+        <div class="mascot-side-avatar">
+            <img src="{{ url_for('static', filename='images/robox_mascot_clean.png') }}" alt="ROBO-X Mascot Instructor">
+            <span class="mascot-live-dot"></span>
+        </div>
+    </div>
+
+    <!-- Custom ROBO-X Neo-Brutalist Footer -->
+    <footer class="gnb-footer">
+        <div class="gnb-footer-inner">
+            <!-- Club Info Banner -->
+            <div class="gnb-trust-center">
+                <div class="trust-head">
+                    <div class="trust-pill">
+                        <i class="fa-solid fa-microchip"></i> ROBO-X INNOVATION HUB
+                    </div>
+                    <p class="trust-sub">Chandigarh University's premier robotics &amp; engineering innovation ecosystem. Learn hardware, build autonomous systems, and ship real software.</p>
+                </div>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="gnb-footer-columns">
+                <div class="footer-col-main">
+                    <div class="footer-logo-row">
+                        <img src="{{ url_for('static', filename='images/university_logo.png') }}" alt="Logo" class="f-logo-uni">
+                        <img src="{{ url_for('static', filename='images/footer logo .jpeg') }}" alt="Robo-X Logo" class="f-logo-robox">
+                        <div class="f-title">
+                            <span class="f-brand">ROBO-X</span>
+                            <span class="f-tag">STUDENT CLUB</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        Building a vibrant community of developers, innovators, and tech enthusiasts at Chandigarh University. Together, we learn, build, and grow.
+                    </p>
+                    <div class="footer-social-pills">
+                        <a href="https://www.instagram.com/roboxclub_cu?igsh=MXIyMjVpbWlhZmo2Zw==" target="_blank" rel="noopener noreferrer" class="gnb-social-pill"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roboxclubcu@gmail.com" target="_blank" rel="noopener noreferrer" class="gnb-social-pill"><i class="fa-solid fa-envelope"></i> Email Us</a>
+                    </div>
+                </div>
+
+                <div class="footer-col-links">
+                    <h5 class="footer-col-title">EXPLORE</h5>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#activities">Activities &amp; Workshops</a></li>
+                        <li><a href="#roadmap">Learning Roadmap</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="/join">Join Network</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-links">
+                    <h5 class="footer-col-title">QUICK LINKS</h5>
+                    <ul>
+                        <li><a href="/join">Membership Form</a></li>
+                        <li><a href="/workshop">Workshop Highlights</a></li>
+                        <li><a href="#contact">Contact Team</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="gnb-footer-bottom">
+                <p>&copy; 2026 ROBO-X Chandigarh University • All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- The Guide Robot -->
-    <div id="guide-robot">
-        <img src="{{ url_for('static', filename='images/robox_mascot_raw.png') }}" alt="Guide Robot" id="robot-img">
-    </div>
-
-
-    <script src="{{ url_for('static', filename='js/guide.js') }}"></script>
+    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/features.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/guide.js') }}"></script>
 </body>
 
 </html>

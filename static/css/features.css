@@ -1,859 +1,438 @@
-/* ================================================================
-   FEATURES CSS — Dark Mode, Countdown, Terminal, Roadmap
-   ================================================================ */
+/* ==========================================================================
+   ROBO-X CLUB — Features & Mascot Section Instructor CSS
+   ========================================================================== */
 
-/* ==================== DARK MODE (#8) ==================== */
-[data-theme="dark"] {
-    --bg-color: #121212;
-    --primary-color: #ff4444;
-    --secondary-color: #ff6666;
-    --accent-color: #ff8888;
-    --text-color: #e0e0e0;
-    --nav-bg: #1a1a1a;
-    --card-bg: #1e1e1e;
-    --border-color: #ff4444;
-}
-
-[data-theme="dark"] body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    background-image: none;
-}
-
-[data-theme="dark"] .doodle-nav {
-    background-color: var(--nav-bg);
-    border-bottom-color: var(--border-color);
-    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.1);
-}
-
-[data-theme="dark"] .nav-links a {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .uni-name {
-    color: #e0e0e0;
-}
-
-[data-theme="dark"] .hero-text h1 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .hero-text p,
-[data-theme="dark"] .doodle-card p,
-[data-theme="dark"] .value-card p,
-[data-theme="dark"] .timeline-step p,
-[data-theme="dark"] .team-card p,
-[data-theme="dark"] .modal-info {
-    color: #aaa;
-}
-
-[data-theme="dark"] .hero-tag {
-    color: #888;
-}
-
-[data-theme="dark"] .hero-accent-line {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .secondary-btn {
-    color: var(--text-color);
-    border-color: #444;
-}
-
-[data-theme="dark"] .secondary-btn:hover {
-    border-color: var(--text-color);
-    background-color: #2a2a2a;
-}
-
-[data-theme="dark"] .doodle-card,
-[data-theme="dark"] .value-card,
-[data-theme="dark"] .team-card {
-    background-color: var(--card-bg);
-    border-color: #333;
-}
-
-[data-theme="dark"] .doodle-card:hover,
-[data-theme="dark"] .value-card:hover,
-[data-theme="dark"] .team-card:hover {
-    border-color: var(--primary-color);
-}
-
-[data-theme="dark"] .identity-timeline {
-    background: linear-gradient(rgba(30, 30, 30, 0.95), rgba(30, 30, 30, 0.95)),
-        url('../images/cuwholeimage.jpeg');
-    background-size: cover;
-    background-position: center;
-}
-
-[data-theme="dark"] .step-icon {
-    background: #2a2a2a;
-    border-color: #444;
-}
-
-[data-theme="dark"] .member-avatar {
-    background-color: #2a2a2a;
-    border-color: #444;
-}
-
-[data-theme="dark"] .member-modal {
-    background: #1e1e1e;
-    border-color: var(--primary-color);
-}
-
-[data-theme="dark"] .modal-body h3 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .modal-quote {
-    background: #252525;
-}
-
-[data-theme="dark"] .modal-quote span {
-    color: #aaa;
-}
-
-[data-theme="dark"] .modal-close {
-    color: #666;
-}
-
-[data-theme="dark"] .modal-close:hover {
-    background: #333;
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] .hero-campus-img {
-    border-color: #333;
-    box-shadow: 20px 20px 0px rgba(255, 68, 68, 0.05);
-}
-
-[data-theme="dark"] .robox-logo {
-    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9))
-            drop-shadow(0 0 2px rgba(255, 255, 255, 0.6))
-            drop-shadow(0 2px 4px rgba(255, 68, 68, 0.3));
-}
-
-[data-theme="dark"] .footer-robox-logo {
-    filter: none;
-    background-color: #fff;
-}
-
-[data-theme="dark"] .nav-notification-icon {
-    background: #1e1e1e;
-    border-color: var(--primary-color);
-}
-
-[data-theme="dark"] .notification-dropdown {
-    background-color: #1e1e1e;
-    border-color: #444;
-}
-
-[data-theme="dark"] .notification-item:hover {
-    background-color: #252525;
-}
-
-[data-theme="dark"] .notification-text strong {
-    color: #e0e0e0;
-}
-
-[data-theme="dark"] .notification-text p {
-    color: #888;
-}
-
-[data-theme="dark"] .robo-speech-bubble {
-    background: #1e1e1e;
-    color: var(--text-color);
-    border-color: var(--primary-color);
-}
-
-[data-theme="dark"] .robo-speech-bubble::before {
-    border-color: #1e1e1e transparent transparent transparent;
-}
-
-/* Circuit board background for dark mode */
-[data-theme="dark"] body::before {
-    content: '';
+/* --------------------------------------------------------------------------
+   1. Floating Side Mascot Instructor Buddy (Neo-Brutalist Site Element Match)
+   -------------------------------------------------------------------------- */
+.side-mascot-wrapper {
     position: fixed;
-    top: 0;
-    left: 0;
+    right: 1.75rem;
+    bottom: 1.75rem;
+    z-index: 140;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.45rem;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .side-mascot-wrapper {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    .mascot-side-speech {
+        max-width: 170px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Neo-Brutalist Speech Box matching site design system (Perfect Balanced Size) */
+.mascot-side-speech {
+    position: relative;
+    background-color: var(--bg-card);
+    border: var(--border-thick);
+    border-radius: 0px;
+    padding: 0.6rem 0.75rem;
+    max-width: 205px;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    pointer-events: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.speech-tag-side {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.60rem;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: var(--accent-red);
+    padding: 0.1rem 0.3rem;
+    border: var(--border-thin);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+/* Technical Monospaced Font (JetBrains Mono - in CAPS LOCK) */
+.mascot-side-speech p {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* Neo-Brutalist Speech Pointer Arrow */
+.mascot-side-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    right: 25px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--border-color);
+}
+
+.mascot-side-speech::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: 27px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--bg-card);
+    z-index: 2;
+}
+
+.mascot-side-avatar {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    pointer-events: auto;
+    cursor: pointer;
+    animation: floatMascot 4s ease-in-out infinite;
+    transition: transform var(--transition-fast);
+}
+
+.mascot-side-avatar:hover {
+    transform: scale(1.08) translateY(-4px);
+}
+
+.mascot-side-avatar img {
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.08;
-    background-image:
-        linear-gradient(var(--primary-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--primary-color) 1px, transparent 1px),
-        linear-gradient(var(--primary-color) 0.5px, transparent 0.5px),
-        linear-gradient(90deg, var(--primary-color) 0.5px, transparent 0.5px);
-    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    object-fit: contain;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: 2px solid var(--primary-color);
+.mascot-live-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
+}
+
+@keyframes floatMascot {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. Team Member Modal Overlay
+   -------------------------------------------------------------------------- */
+.member-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(18, 18, 18, 0.75);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+}
+
+.member-modal-overlay.active {
+    display: flex;
+}
+
+.member-modal {
+    background-color: var(--bg-card);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-lg);
+    max-width: 480px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     width: 36px;
     height: 36px;
+    background-color: var(--bg-card);
+    border: var(--border-thin);
+    box-shadow: 2px 2px 0px 0px var(--border-color);
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-    margin-left: 1rem;
-    position: relative;
+}
+
+.modal-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.25rem auto;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    flex-shrink: 0;
-    vertical-align: middle;
+    background-color: var(--bg-alt);
 }
 
-.theme-toggle:hover {
-    background: var(--primary-color);
-    color: #fff;
-    transform: rotate(180deg);
-}
-
-.theme-toggle .fa-moon { display: inline; }
-.theme-toggle .fa-sun { display: none; }
-
-[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
-[data-theme="dark"] .theme-toggle .fa-sun { display: inline; }
-
-/* ==================== EVENT COUNTDOWN (#10) ==================== */
-.countdown-section {
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.countdown-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.countdown-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 2.5rem;
-    font-family: var(--font-body);
-}
-
-[data-theme="dark"] .countdown-subtitle {
-    color: #aaa;
-}
-
-/* ---- Event Card (Doodle Style) ---- */
-.event-card {
-    background: linear-gradient(135deg, rgba(255,59,59,0.08), rgba(255,255,255,0.95));
-    border: 2px solid #000;
-    border-radius: 18px;
-    padding: 2.5rem 2rem 2rem;
-    max-width: 620px;
-    margin: 0 auto;
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    text-align: center;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 10px 10px 0px rgba(255, 59, 59, 0.16);
-}
-
-[data-theme="dark"] .event-card {
-    border-color: #333;
-}
-
-[data-theme="dark"] .event-card:hover {
-    border-color: var(--primary-color);
-}
-
-.event-card-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: #27ae60;
-    color: #fff;
-    font-family: var(--font-body);
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 0.35rem 1rem;
-    border-radius: 8px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-}
-
-.event-card-status i {
-    font-size: 0.75rem;
-}
-
-.event-card-title {
-    font-family: var(--font-header);
-    font-size: 1.6rem;
-    color: var(--text-color, #222);
-    margin: 0 0 0.3rem;
-    letter-spacing: 0.5px;
-}
-
-[data-theme="dark"] .event-card-title {
-    color: #eee;
-}
-
-.event-card-tagline {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: #777;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-}
-
-[data-theme="dark"] .event-card-tagline {
-    color: #999;
-}
-
-/* Meta items */
-.event-card-meta {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
-    border-top: 1px dashed rgba(0,0,0,0.2);
-    border-bottom: 1px dashed rgba(0,0,0,0.2);
-}
-
-.event-meta-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-body);
-    font-size: 0.88rem;
-    color: #555;
-    font-weight: 600;
-}
-
-.event-meta-item i {
-    color: var(--primary-color);
-    font-size: 0.85rem;
-}
-
-[data-theme="dark"] .event-meta-item {
-    color: #bbb;
-}
-
-/* Highlight tags */
-.event-card-highlights {
-    display: flex;
-    justify-content: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.8rem;
-}
-
-.event-highlight-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    background: var(--card-bg);
-    border: 2px solid #000;
-    border-radius: 8px;
-    padding: 0.4rem 0.9rem;
-    font-size: 0.8rem;
-    font-family: var(--font-body);
-    font-weight: bold;
-    color: var(--text-color, #222);
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s, border-color 0.2s;
-}
-
-.event-highlight-tag:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-color);
-}
-
-.event-highlight-tag i {
-    color: var(--primary-color);
-    font-size: 0.75rem;
-}
-
-[data-theme="dark"] .event-highlight-tag {
-    border-color: #444;
-    color: #ddd;
-}
-
-[data-theme="dark"] .event-highlight-tag:hover {
-    border-color: var(--primary-color);
-}
-
-/* Action buttons */
-.event-card-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-}
-
-.event-card-actions .doodle-btn {
-    font-size: 0.9rem;
-    padding: 0.7rem 1.8rem;
-}
-
-/* Legacy countdown styles (kept for reuse) */
-.countdown-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.countdown-box {
-    background: var(--card-bg);
-    border: 2px solid #000;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    min-width: 100px;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-[data-theme="dark"] .countdown-box {
-    border-color: #333;
-}
-
-.countdown-box:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-}
-
-.countdown-number {
-    font-family: var(--font-header);
-    font-size: 3rem;
-    color: var(--primary-color);
-    line-height: 1;
-    display: block;
-}
-
-.countdown-label {
-    font-size: 0.85rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 0.3rem;
-    font-weight: bold;
-}
-
-[data-theme="dark"] .countdown-label {
-    color: #888;
-}
-
-/* ==================== LEARNING ROADMAP / SKILL TREE (#4) ==================== */
-.roadmap-section {
-    padding: 6rem 2rem;
-    text-align: center;
-    position: relative;
-}
-
-.roadmap-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.roadmap-subtitle {
-    color: #666;
-    font-size: 1.05rem;
-    margin-bottom: 3rem;
-}
-
-[data-theme="dark"] .roadmap-subtitle {
-    color: #aaa;
-}
-
-.roadmap-tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* Vertical connector line through center */
-.roadmap-tree::before {
-    content: '';
-    position: absolute;
-    top: 30px;
-    bottom: 30px;
-    left: 50%;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--primary-color), #ff8888, #ffbd2e, #28c840);
-    transform: translateX(-50%);
-    border-radius: 3px;
-    z-index: 0;
-}
-
-.roadmap-level {
-    display: flex;
-    align-items: center;
+.modal-avatar img {
     width: 100%;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 1rem;
+    height: 100%;
+    object-fit: cover;
 }
 
-.roadmap-level:nth-child(odd) {
-    justify-content: flex-start;
+.modal-avatar-placeholder {
+    display: none;
+    font-size: 3rem;
+    color: var(--text-muted);
 }
 
-.roadmap-level:nth-child(even) {
-    justify-content: flex-end;
-}
-
-.roadmap-node {
-    background: var(--card-bg);
-    border: 2px solid #000;
-    border-radius: 16px;
-    padding: 1.2rem 1.5rem;
-    max-width: 350px;
-    width: 42%;
-    text-align: left;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-}
-
-[data-theme="dark"] .roadmap-node {
-    border-color: #333;
-}
-
-.roadmap-node:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary-color);
-    box-shadow: 6px 6px 0px rgba(255, 68, 68, 0.15);
-}
-
-.roadmap-node .node-level-badge {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
+.modal-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 0.2rem 0.7rem;
-    border-radius: 50px;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-body);
+    margin-bottom: 0.2rem;
 }
 
-.roadmap-node.level-beginner .node-level-badge {
-    background: rgba(40, 200, 64, 0.15);
-    color: #28c840;
-}
-
-.roadmap-node.level-intermediate .node-level-badge {
-    background: rgba(255, 189, 46, 0.15);
-    color: #e6a800;
-}
-
-.roadmap-node.level-advanced .node-level-badge {
-    background: rgba(255, 68, 68, 0.15);
-    color: #ff4444;
-}
-
-.roadmap-node.level-expert .node-level-badge {
-    background: rgba(79, 195, 247, 0.15);
-    color: #4fc3f7;
-}
-
-.roadmap-node h4 {
-    font-size: 1.15rem;
-    margin: 0.3rem 0;
-    color: var(--text-color);
-}
-
-.roadmap-node p {
-    font-size: 0.88rem;
-    color: #666;
-    margin: 0;
-    line-height: 1.5;
-}
-
-[data-theme="dark"] .roadmap-node p {
-    color: #aaa;
-}
-
-.roadmap-node .node-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.6rem;
-}
-
-.roadmap-node .skill-tag {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.55rem;
-    background: rgba(255, 59, 59, 0.08);
-    color: var(--primary-color);
-    border-radius: 50px;
-    font-weight: 600;
-    border: 1px solid rgba(255, 59, 59, 0.2);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: background 0.25s ease, transform 0.2s ease;
-    cursor: pointer;
-}
-
-.roadmap-node a.skill-tag:hover {
-    background: rgba(255, 59, 59, 0.18);
-    transform: translateY(-1px);
-}
-
-.roadmap-node .skill-tag i {
-    font-size: 0.5rem;
-    opacity: 0.6;
-}
-
-[data-theme="dark"] .roadmap-node .skill-tag {
-    background: rgba(255, 68, 68, 0.15);
-    border-color: rgba(255, 68, 68, 0.3);
-}
-
-/* Center dot on the timeline */
-.roadmap-level .timeline-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px var(--primary-color);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    transition: transform 0.3s;
-}
-
-[data-theme="dark"] .roadmap-level .timeline-dot {
-    border-color: #121212;
-}
-
-.roadmap-level:hover .timeline-dot {
-    transform: translateX(-50%) scale(1.3);
-}
-
-/* Horizontal connectors */
-.roadmap-level::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    height: 2px;
-    background: var(--primary-color);
-    opacity: 0.3;
-    z-index: 0;
-}
-
-.roadmap-level:nth-child(odd)::after {
-    left: calc(42% + 10px);
-    right: 50%;
-}
-
-.roadmap-level:nth-child(even)::after {
-    right: calc(42% + 10px);
-    left: 50%;
-}
-
-/* ==================== RESPONSIVE — NEW FEATURES ==================== */
-@media (max-width: 768px) {
-    /* Countdown */
-    .countdown-section {
-        padding: 2rem 1rem;
-    }
-
-    .countdown-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .countdown-subtitle {
-        font-size: 0.92rem;
-        padding: 0 0.5rem;
-    }
-
-    .countdown-container {
-        gap: 0.6rem;
-        justify-content: center;
-    }
-
-    .countdown-box {
-        padding: 0.8rem 1rem;
-        min-width: 65px;
-        border-radius: 10px;
-    }
-
-    .countdown-number {
-        font-size: 1.8rem;
-    }
-
-    /* Event card responsive */
-    .event-card {
-        padding: 2rem 1.2rem 1.5rem;
-        margin: 0 0.5rem;
-    }
-
-    .event-card-title {
-        font-size: 1.3rem;
-    }
-
-    .event-card-tagline {
-        font-size: 0.88rem;
-    }
-
-    .event-card-meta {
-        gap: 0.6rem;
-    }
-
-    .event-meta-item {
-        font-size: 0.8rem;
-    }
-
-    .event-highlight-tag {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.7rem;
-    }
-
-    .event-card-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .event-card-actions .doodle-btn {
-        justify-content: center;
-        font-size: 0.85rem;
-        padding: 0.65rem 1.2rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-
-    .countdown-cta .add-cal-btn {
-        font-size: 0.85rem;
-        padding: 0.6rem 1.2rem;
-        min-height: 44px;
-    }
-
-    /* Roadmap */
-    .roadmap-section {
-        padding: 2.5rem 1rem;
-    }
-
-    .roadmap-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .roadmap-subtitle {
-        font-size: 0.88rem;
-        margin-bottom: 2rem;
-    }
-
-    .roadmap-tree::before {
-        left: 20px;
-    }
-
-    .roadmap-level {
-        justify-content: flex-end !important;
-        padding-left: 50px;
-        margin-bottom: 0.6rem;
-    }
-
-    .roadmap-node {
-        width: 100%;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .roadmap-node h4 {
-        font-size: 1rem;
-    }
-
-    .roadmap-node p {
-        font-size: 0.82rem;
-    }
-
-    .roadmap-node .node-level-badge {
-        font-size: 0.6rem;
-    }
-
-    .roadmap-node .skill-tag {
-        font-size: 0.65rem;
-        padding: 0.12rem 0.45rem;
-    }
-
-    .roadmap-level .timeline-dot {
-        left: 20px;
-        transform: translateX(-50%);
-        width: 14px;
-        height: 14px;
-    }
-
-    .roadmap-level:hover .timeline-dot {
-        transform: translateX(-50%) scale(1.3);
-    }
-
-    .roadmap-level::after {
-        left: 28px !important;
-        right: auto !important;
-        width: 22px !important;
-    }
-
-    /* Theme toggle in mobile menu */
-    .theme-toggle {
-        margin: 0.6rem auto;
-        width: 44px;
-        height: 44px;
-        font-size: 1.1rem;
-    }
-}
-
-/* ==================== TEAM GRID: 2-ROW LAYOUT ==================== */
-.team-row-faculty {
-    justify-content: center;
+.modal-role {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--accent-red);
     margin-bottom: 1rem;
 }
 
-.team-row-students {
-    justify-content: center;
+.modal-info {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
 }
 
-/* On mobile, keep both rows as 2-column grids */
-@media (max-width: 768px) {
-    .team-row-faculty,
-    .team-row-students {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-        margin-top: 0.6rem;
-        max-width: 100%;
+.modal-quote {
+    padding: 1.15rem;
+    background-color: var(--bg-alt);
+    border: var(--border-thin);
+    font-family: var(--font-mono);
+    font-size: 1.02rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   3. Floating 3D Background Watermark Hardware Elements (Smooth Pause Scroll Color Activation!)
+   -------------------------------------------------------------------------- */
+.gnb-floating-3d-assets {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.floating-3d-item {
+    position: absolute;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 0.35; /* Faded watermark position when stopped */
+    mix-blend-mode: multiply;
+    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: auto;
+    filter: saturate(0.8);
+}
+
+/* While Scrolling: Elements illuminate into full original color & opacity! */
+.gnb-floating-3d-assets.is-scrolling .floating-3d-item {
+    opacity: 0.95;
+    mix-blend-mode: normal;
+    filter: saturate(1.1) drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+}
+
+.floating-3d-item:hover {
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    filter: saturate(1.15) !important;
+}
+
+/* Top-Left ESP32 Microchip */
+.floating-esp32 {
+    top: 4.5rem;
+    left: 0.5rem;
+    width: 165px;
+    height: 165px;
+    transform: rotate(-12deg);
+    animation: floatLevitate1 6s ease-in-out infinite;
+}
+
+.floating-esp32 img {
+    width: 165px !important;
+    height: 165px !important;
+    object-fit: contain;
+}
+
+.floating-esp32:hover {
+    transform: rotate(-5deg) scale(1.08);
+}
+
+/* Bottom-Left Custom Drone Arm Leg + Scroll-Spinning 3D Propeller */
+.floating-propeller-leg {
+    bottom: 1.5rem;
+    left: 0.5rem;
+    width: 240px;
+    height: 152px;
+    border-radius: 0;
+    display: block;
+    overflow: visible;
+    position: absolute;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.gnb-floating-3d-assets.is-scrolling .floating-propeller-leg {
+    opacity: 0.95;
+    mix-blend-mode: normal;
+    filter: saturate(1.1) drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+}
+
+.floating-propeller-leg:hover {
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    transform: scale(1.06);
+}
+
+/* Stationary Clean Carbon Drone Arm Leg */
+.drone-arm-leg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    z-index: 1;
+    background: transparent !important;
+}
+
+/* Single Rotating 3-Blade Propeller (Rotating around hub center 73.5% 48.3%) */
+.drone-propeller-blades-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    z-index: 2;
+    transform-origin: 73.5% 48.3%;
+    will-change: transform;
+    background: transparent !important;
+}
+
+/* Top-Right Raspberry Pi 4 */
+.floating-raspi {
+    top: 4.5rem;
+    right: 0.5rem;
+    width: 175px;
+    height: 160px;
+    transform: rotate(14deg);
+    animation: floatLevitate2 7s ease-in-out infinite 1s;
+}
+
+.floating-raspi img {
+    width: 175px !important;
+    height: 160px !important;
+    object-fit: contain;
+}
+
+.floating-raspi:hover {
+    transform: rotate(5deg) scale(1.08);
+}
+
+/* Middle-Right Pencil Sketch Quadcopter Drone (User's Custom Pencil Sketch Artwork) */
+.floating-drone {
+    top: 21rem;
+    right: 0.5rem;
+    width: 190px;
+    height: 160px;
+    transform: rotate(-8deg);
+    animation: floatLevitate1 6.5s ease-in-out infinite 2s;
+}
+
+.floating-drone img {
+    width: 190px !important;
+    height: 160px !important;
+    object-fit: contain;
+}
+
+.floating-drone:hover {
+    transform: rotate(-2deg) scale(1.08);
+}
+
+.floating-label {
+    display: none;
+}
+
+@keyframes floatLevitate1 {
+    0%, 100% {
+        transform: translateY(0px) rotate(-12deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-8deg);
     }
 }
 
-@media (max-width: 420px) {
-    .countdown-box {
-        padding: 0.8rem 1rem;
-        min-width: 60px;
+@keyframes floatLevitate2 {
+    0%, 100% {
+        transform: translateY(0px) rotate(12deg);
     }
+    50% {
+        transform: translateY(-12px) rotate(16deg);
+    }
+}
 
-    .countdown-number {
-        font-size: 1.6rem;
+@media (max-width: 1400px) {
+    .floating-esp32 { width: 135px; height: 135px; left: 0.2rem; }
+    .floating-esp32 img { width: 135px !important; height: 135px !important; }
+    .floating-raspi { width: 140px; height: 130px; right: 0.2rem; }
+    .floating-raspi img { width: 140px !important; height: 130px !important; }
+    .floating-drone { width: 145px; height: 130px; right: 0.2rem; }
+    .floating-drone img { width: 145px !important; height: 130px !important; }
+    .floating-propeller-leg { width: 190px; height: 120px; left: 0.2rem; }
+}
+
+@media (max-width: 992px) {
+    .floating-esp32 { display: none; }
+    .floating-raspi { display: none; }
+    .floating-drone { display: none; }
+    .floating-propeller-leg {
+        bottom: 1rem;
+        left: 0.5rem;
+        width: 170px;
+        height: 100px;
     }
 }

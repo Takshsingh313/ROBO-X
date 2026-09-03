@@ -50,4 +50,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==================== 3D PROPELLER SCROLL ROTATION & DYNAMIC SCROLL ACTIVE COLOR STATE ====================
+    const floatingAssetsContainer = document.querySelector('.gnb-floating-3d-assets');
+    const propellerImg = document.getElementById('propeller-img');
+    let scrollTimeout;
+
+    window.addEventListener('scroll', () => {
+        // 1. Spin propeller on scroll
+        if (propellerImg) {
+            const scrollRotation = window.scrollY * 0.75;
+            propellerImg.style.transform = `rotate(${scrollRotation}deg)`;
+        }
+
+        // 2. Active full color & opacity mode while moving down the site!
+        if (floatingAssetsContainer) {
+            floatingAssetsContainer.classList.add('is-scrolling');
+        }
+
+        // 3. Take a smooth little pause (300ms) before fading back down to watermark position when scrolling stops
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (floatingAssetsContainer) {
+                floatingAssetsContainer.classList.remove('is-scrolling');
+            }
+        }, 300);
+    }, { passive: true });
+
+
+
 });
+
+

@@ -1,19 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="content-section">
-    <h1>Join <span class="highlight">Robo-X</span></h1>
-    <p class="lead">Ready to build the future?</p>
+<section class="gnb-frame-section" style="padding: 3.5rem 0;">
+    <div style="max-width: 580px; margin: 0 auto 1rem auto;">
+        <a href="javascript:window.history.length > 1 ? window.history.back() : window.location.href='/'" class="gnb-btn" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
+            <i class="fa-solid fa-arrow-left"></i> <span>GO BACK</span>
+        </a>
+    </div>
+    <div class="gnb-section-head">
+        <span class="gnb-tag"><i class="fa-solid fa-user-plus"></i> MEMBERSHIP REGISTRATION</span>
+        <h2>Join Robo-X Club</h2>
+        <p class="gnb-section-sub">Ready to build the future of robotics, automation, and hardware engineering?</p>
+    </div>
 
-    <div class="doodle-card" style="width: 100%; max-width: 400px; margin: 2rem auto; box-sizing: border-box;">
-        <h3>Membership Open!</h3>
-        <p>We are looking for enthusiastic members who love technology.</p>
-        <ul style="text-align: left; margin: 1rem 2rem;">
-            <li>No prior experience needed if you have it would be more better !</li>
-            <li> Access to robotic kits</li>
+    <div class="gnb-card" style="max-width: 580px; margin: 0 auto; padding: 2.25rem;">
+        <span class="gnb-tag" style="margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-door-open"></i> APPLICATIONS OPEN • BATCH 2026-27
+        </span>
+        
+        <h3 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem;">
+            Become a Member
+        </h3>
+        <p style="font-family: var(--font-sans); font-size: 0.98rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.5rem;">
+            We are looking for enthusiastic students who love technology, hardware, coding, and building cool robotics projects.
+        </p>
+
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; padding: 0;">
+            <li style="display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 600;">
+                <i class="fa-solid fa-circle-check" style="color: var(--accent-red); font-size: 1.1rem;"></i> No prior experience needed (enthusiasm is key!)
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 600;">
+                <i class="fa-solid fa-circle-check" style="color: var(--accent-red); font-size: 1.1rem;"></i> Access to robotic kits, sensors &amp; microcontrollers
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-sans); font-size: 0.92rem; font-weight: 600;">
+                <i class="fa-solid fa-circle-check" style="color: var(--accent-red); font-size: 1.1rem;"></i> Direct mentorship from faculty &amp; senior developers
+            </li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDV3dZwdyhfdnMQ5Wbay7uUW5NIKnmF9JQmmyiSTUjD9RfMQ/viewform"
-            class="doodle-btn primary-btn">Fill Application Form</a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLh-xXpxdIT3m7MdmGXDPBV4mGE-mGbcHvCjpy4ZwVbILnng/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="gnb-btn gnb-btn-red" style="width: 100%; text-align: center; justify-content: center;">
+            <span>FILL APPLICATION FORM</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
     </div>
 </section>
 {% endblock %}

@@ -1,22 +1,29 @@
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
 
-    {% block content %}
-    <section class="content-section coming-soon-section">
-        <div class="coming-soon-inner">
-            <h1 class="coming-soon-title">{{ page_title }}</h1>
-            <h2 class="coming-soon-subtitle">Coming Soon</h2>
+{% block content %}
+<section class="gnb-frame-section" style="padding: 4rem 0; text-align: center;">
+    <div class="gnb-section-head">
+        <span class="gnb-tag"><i class="fa-solid fa-clock-rotate-left"></i> IN DEVELOPMENT</span>
+        <h2>{{ page_title }}</h2>
+        <p class="gnb-section-sub">Exciting upcoming hardware sprints and competition announcements coming soon!</p>
+    </div>
 
-            <div class="coming-soon-card">
-                <p class="coming-soon-quote">
-                    <i class="fa-solid fa-quote-left"></i>
-                    {{ quote }}
-                    <i class="fa-solid fa-quote-right"></i>
-                </p>
-            </div>
-
-            <div class="coming-soon-cta">
-                <a href="/" class="doodle-btn primary-btn"><i class="fa-solid fa-house"></i> Back to Home</a>
-            </div>
+    <div class="gnb-card" style="max-width: 580px; margin: 0 auto; padding: 2.5rem; text-align: center;">
+        <div style="font-size: 2.75rem; color: var(--accent-red); margin-bottom: 1rem;">
+            <i class="fa-solid fa-laptop-code"></i>
         </div>
-    </section>
-    {% endblock %}
+        <h3 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem;">
+            COMING SOON
+        </h3>
+        <p style="font-family: var(--font-sans); font-size: 0.98rem; font-weight: 600; color: var(--text-muted); margin-bottom: 2rem;">
+            We are preparing exciting hackathons, collaborative projects, and national robotics marathons. Stay tuned!
+        </p>
+
+        <div>
+            <a href="/" class="gnb-btn gnb-btn-red">
+                <i class="fa-solid fa-house"></i> <span>BACK TO HOME</span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
