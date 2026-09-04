@@ -298,6 +298,26 @@
     transform: rotate(-5deg) scale(1.08);
 }
 
+/* Left-Center RadioMaster Pocket Radio Transmitter */
+.floating-radiomaster {
+    top: 48%;
+    left: 0.5rem;
+    width: 170px;
+    height: 170px;
+    transform: translateY(-50%) rotate(-8deg);
+    animation: floatLevitate2 7s ease-in-out infinite;
+}
+
+.floating-radiomaster img {
+    width: 170px !important;
+    height: 170px !important;
+    object-fit: contain;
+}
+
+.floating-radiomaster:hover {
+    transform: translateY(-50%) rotate(-2deg) scale(1.08);
+}
+
 /* Bottom-Left Custom Drone Arm Leg + Scroll-Spinning 3D Propeller */
 .floating-propeller-leg {
     bottom: 1.5rem;
@@ -418,6 +438,8 @@
 @media (max-width: 1400px) {
     .floating-esp32 { width: 135px; height: 135px; left: 0.2rem; }
     .floating-esp32 img { width: 135px !important; height: 135px !important; }
+    .floating-radiomaster { width: 140px; height: 140px; left: 0.2rem; }
+    .floating-radiomaster img { width: 140px !important; height: 140px !important; }
     .floating-raspi { width: 140px; height: 130px; right: 0.2rem; }
     .floating-raspi img { width: 140px !important; height: 130px !important; }
     .floating-drone { width: 145px; height: 130px; right: 0.2rem; }
@@ -427,6 +449,7 @@
 
 @media (max-width: 992px) {
     .floating-esp32 { display: none; }
+    .floating-radiomaster { display: none; }
     .floating-raspi { display: none; }
     .floating-drone { display: none; }
     .floating-propeller-leg {

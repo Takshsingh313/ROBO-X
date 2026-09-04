@@ -65,6 +65,32 @@ html.dark {
     --shadow-lg: 6px 6px 0px 0px #000000;
 }
 
+/* Night Mode Logo Text Visibility (100% Original Vivid Red + Crisp White Text) */
+html.dark img.f-logo-robox,
+html.dark img[src*="footer logo"] {
+    content: url("../images/footer_logo_dark.png");
+}
+
+html.dark img[src*="robox.png"] {
+    content: url("../images/robox_dark.png");
+}
+
+html.dark img[src*="robox_no_tm"] {
+    content: url("../images/robox_no_tm_dark.png");
+}
+
+html.dark img[src*="robox_tight"] {
+    content: url("../images/robox_tight_dark.png");
+}
+
+html.dark img[src*="robox_cropped"] {
+    content: url("../images/robox_cropped_dark.png");
+}
+
+html.dark img[src*="robox_nav_logo"] {
+    content: url("../images/robox_nav_logo_dark.png");
+}
+
 /* --------------------------------------------------------------------------
    2. Core Reset & Global Layout
    -------------------------------------------------------------------------- */
@@ -660,6 +686,148 @@ html.dark .icon-moon { display: none; }
     color: var(--text-muted);
 }
 
+/* Photo Slider & Alternating Transition */
+.photo-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--bg-alt);
+}
+
+.photo-slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-slider .img-a {
+    z-index: 1;
+}
+
+.photo-slider .img-b {
+    z-index: 2;
+    animation: photoCrossfade 7s infinite ease-in-out;
+}
+
+@keyframes photoCrossfade {
+    0%, 42% {
+        opacity: 0;
+    }
+    50%, 92% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.photo-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    z-index: 5;
+    background: rgba(10, 10, 15, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+/* Workshop Photo Slider - 3 Images Ken Burns Transition */
+.photo-slider-workshop .ws-img-1 {
+    z-index: 3;
+    animation: workshopSlide1 10.5s infinite ease-in-out;
+}
+
+.photo-slider-workshop .ws-img-2 {
+    z-index: 2;
+    animation: workshopSlide2 10.5s infinite ease-in-out;
+}
+
+.photo-slider-workshop .ws-img-3 {
+    z-index: 1;
+    animation: workshopSlide3 10.5s infinite ease-in-out;
+}
+
+@keyframes workshopSlide1 {
+    0% { opacity: 1; transform: scale(1.0); }
+    28% { opacity: 1; transform: scale(1.06); }
+    33% { opacity: 0; transform: scale(1.08); }
+    34%, 95% { opacity: 0; transform: scale(1.0); }
+    100% { opacity: 1; transform: scale(1.0); }
+}
+
+@keyframes workshopSlide2 {
+    0%, 28% { opacity: 0; transform: scale(1.0); }
+    33% { opacity: 1; transform: scale(1.0); }
+    61% { opacity: 1; transform: scale(1.06); }
+    66% { opacity: 0; transform: scale(1.08); }
+    67%, 100% { opacity: 0; transform: scale(1.0); }
+}
+
+@keyframes workshopSlide3 {
+    0%, 61% { opacity: 0; transform: scale(1.0); }
+    66% { opacity: 1; transform: scale(1.0); }
+    95% { opacity: 1; transform: scale(1.06); }
+    100% { opacity: 0; transform: scale(1.08); }
+}
+
+/* Community Photo Slider - 3 Images Ken Burns Transition */
+.photo-slider-community .comm-img-1 {
+    z-index: 3;
+    animation: communitySlide1 12s infinite ease-in-out;
+}
+
+.photo-slider-community .comm-img-2 {
+    z-index: 2;
+    animation: communitySlide2 12s infinite ease-in-out;
+}
+
+.photo-slider-community .comm-img-3 {
+    z-index: 1;
+    animation: communitySlide3 12s infinite ease-in-out;
+}
+
+@keyframes communitySlide1 {
+    0% { opacity: 1; transform: scale(1.0); }
+    28% { opacity: 1; transform: scale(1.05); }
+    33% { opacity: 0; transform: scale(1.08); }
+    34%, 95% { opacity: 0; transform: scale(1.0); }
+    100% { opacity: 1; transform: scale(1.0); }
+}
+
+@keyframes communitySlide2 {
+    0%, 28% { opacity: 0; transform: scale(1.0); }
+    33% { opacity: 1; transform: scale(1.0); }
+    61% { opacity: 1; transform: scale(1.05); }
+    66% { opacity: 0; transform: scale(1.08); }
+    67%, 100% { opacity: 0; transform: scale(1.0); }
+}
+
+@keyframes communitySlide3 {
+    0%, 61% { opacity: 0; transform: scale(1.0); }
+    66% { opacity: 1; transform: scale(1.0); }
+    95% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0; transform: scale(1.08); }
+}
+
 /* --------------------------------------------------------------------------
    6. About / Identity Section (Distinct Frame Spacing)
    -------------------------------------------------------------------------- */
@@ -1147,6 +1315,7 @@ html.dark .icon-moon { display: none; }
     padding: 3rem 1.5rem 2rem 1.5rem;
     margin-top: 3rem;
     position: relative;
+    overflow: hidden;
     z-index: 10;
 }
 
@@ -1202,6 +1371,10 @@ html.dark .icon-moon { display: none; }
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+}
+
+.footer-col-main {
+    position: relative;
 }
 
 .footer-logo-row {

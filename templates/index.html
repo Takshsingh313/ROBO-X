@@ -7,6 +7,10 @@
         <img src="{{ url_for('static', filename='images/esp32_3d.png') }}" alt="ESP32 3D Chip">
     </div>
 
+    <div class="floating-3d-item floating-radiomaster" title="RadioMaster Pocket Radio Transmitter">
+        <img src="{{ url_for('static', filename='images/radiomaster_3d.png') }}" alt="RadioMaster Pocket Transmitter">
+    </div>
+
     <div class="floating-3d-item floating-propeller-leg" id="scroll-propeller" title="Drone Arm Leg Propeller (Spins on Scroll)">
         <img src="{{ url_for('static', filename='images/drone_arm_body.png') }}" alt="Drone Arm Leg" class="drone-arm-leg-img">
         <img src="{{ url_for('static', filename='images/drone_propeller_blades.png') }}" alt="3D Propeller" id="propeller-img" class="drone-propeller-blades-img">
@@ -61,26 +65,33 @@
         <div class="gnb-hero-visual">
             <div class="hero-photo-stack">
                 <div class="photo-card photo-card-1">
-                    <div class="photo-placeholder-box">
-                        <i class="fa-solid fa-camera photo-icon"></i>
-                        <span class="photo-lbl">WORKSHOP PHOTO 01</span>
-                        <span class="photo-sub">Ready for photo upload</span>
+                    <div class="photo-slider photo-slider-workshop">
+                        <img src="{{ url_for('static', filename='images/workshop_photo_1a.jpg') }}" alt="ROBO-X Workshop" class="photo-slider-img ws-img-1">
+                        <img src="{{ url_for('static', filename='images/workshop_photo_1b.jpg') }}" alt="ROBO-X Workshop" class="photo-slider-img ws-img-2">
+                        <img src="{{ url_for('static', filename='images/workshop_photo_1c.jpg') }}" alt="ROBO-X Workshop" class="photo-slider-img ws-img-3">
+                        <div class="photo-badge">
+                            <i class="fa-solid fa-camera"></i> WORKSHOP PHOTO 01
+                        </div>
                     </div>
                 </div>
 
                 <div class="photo-card photo-card-2">
-                    <div class="photo-placeholder-box">
-                        <i class="fa-solid fa-robot photo-icon"></i>
-                        <span class="photo-lbl">PROJECT PHOTO 02</span>
-                        <span class="photo-sub">Ready for photo upload</span>
+                    <div class="photo-slider">
+                        <img src="{{ url_for('static', filename='images/project_photo_2.jpg') }}" alt="ROBO-X Drone Project" class="photo-slider-img">
+                        <div class="photo-badge">
+                            <i class="fa-solid fa-robot"></i> PROJECT PHOTO 02
+                        </div>
                     </div>
                 </div>
 
                 <div class="photo-card photo-card-3">
-                    <div class="photo-placeholder-box">
-                        <i class="fa-solid fa-users photo-icon"></i>
-                        <span class="photo-lbl">COMMUNITY PHOTO 03</span>
-                        <span class="photo-sub">Ready for photo upload</span>
+                    <div class="photo-slider photo-slider-community">
+                        <img src="{{ url_for('static', filename='images/community_photo_3a.jpg') }}" alt="ROBO-X Community" class="photo-slider-img comm-img-1">
+                        <img src="{{ url_for('static', filename='images/community_photo_3b.jpg') }}" alt="ROBO-X Community" class="photo-slider-img comm-img-2">
+                        <img src="{{ url_for('static', filename='images/community_photo_3c.jpg') }}" alt="ROBO-X Community" class="photo-slider-img comm-img-3">
+                        <div class="photo-badge">
+                            <i class="fa-solid fa-users"></i> COMMUNITY PHOTO 03
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,13 +203,6 @@
                 <div>
                     <span style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 900; color: var(--text-main); display: block; line-height: 1;">10+</span>
                     <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">CLASSROOMS HELD</span>
-                </div>
-            </div>
-
-            <div style="flex: 1; min-width: 180px; border: var(--border-thin); overflow: hidden; position: relative; background-color: var(--bg-card); box-shadow: 2px 2px 0px 0px var(--border-color);">
-                <img src="{{ url_for('static', filename='images/club_launch_highlights.jpg') }}" alt="Event Highlights" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(18, 20, 24, 0.85); font-family: var(--font-mono); font-size: 0.6rem; font-weight: 800; text-transform: uppercase; color: var(--text-main); padding: 0.15rem 0.35rem; text-align: center;">
-                    <i class="fa-solid fa-camera"></i> HIGHLIGHTS
                 </div>
             </div>
         </div>
@@ -385,14 +389,14 @@
     <div class="gnb-team-label"><i class="fa-solid fa-graduation-cap"></i> FACULTY MENTORS</div>
     <div class="gnb-team-grid">
         <div class="gnb-card team-card-item" 
-             data-name="Dr. Ajay Kumar Singh" 
+             data-name="Dr. Krishnendu Rakhi" 
              data-role="Head of Department"
              data-info="Head of Department, School of Computer Engineering (SOCE) at Chandigarh University"
-             data-img="{{ url_for('static', filename='images/hodsir1.jpeg') }}">
+             data-img="{{ url_for('static', filename='images/hod_krishnendu.png') }}">
             <div class="team-avatar-box">
-                <img src="{{ url_for('static', filename='images/hodsir1.jpeg') }}" alt="Dr. Ajay Kumar Singh">
+                <img src="{{ url_for('static', filename='images/hod_krishnendu.png') }}" alt="Dr. Krishnendu Rakhi">
             </div>
-            <h4>Dr. Ajay Kumar Singh</h4>
+            <h4>Dr. Krishnendu Rakhi</h4>
             <span class="team-role-tag">Head of Department</span>
         </div>
 

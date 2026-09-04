@@ -75,10 +75,7 @@
             </div>
 
             <div style="border: var(--border-thick); box-shadow: var(--shadow-md); overflow: hidden; background-color: var(--bg-alt);">
-                <img src="{{ url_for('static', filename='images/club_launch_highlights.jpg') }}" alt="Orientation Event Poster" style="width: 100%; display: block; object-fit: cover;">
-                <div style="padding: 0.65rem 0.85rem; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; background-color: var(--bg-card); border-top: var(--border-thin);">
-                    <i class="fa-solid fa-image"></i> Event Poster &amp; Classroom Demos
-                </div>
+                <img src="{{ url_for('static', filename='images/orientation_poster.jpg') }}" alt="Orientation Event Poster" style="width: 100%; display: block; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -86,81 +83,36 @@
     <div style="max-width: 960px; margin: 3rem auto 0 auto;">
         <div class="gnb-section-head" style="margin-bottom: 2rem;">
             <span class="gnb-tag"><i class="fa-solid fa-star"></i> EVENT HIGHLIGHTS</span>
-            <h2>Event Highlights &amp; Media</h2>
-            <p class="gnb-section-sub">Capturing the energy, classroom sessions, and video edit of our orientation event.</p>
+            <h2>Orientation Classroom Highlights</h2>
+            <p class="gnb-section-sub">Capturing the energy, hands-on classroom demonstrations, and student showcases during our orientation event.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; align-items: stretch;">
             
-            <div style="position: relative; padding: 1.25rem 0.5rem 1.25rem 1.25rem;">
-                <div style="position: absolute; top: 0; left: 0; right: 1.5rem; height: 75%; background-color: var(--accent-red); border: var(--border-thick); z-index: 1;"></div>
+            <!-- Highlight Box 1 -->
+            <div style="border: var(--border-thick); box-shadow: var(--shadow-md); background-color: var(--bg-card); overflow: hidden;">
+                <img src="{{ url_for('static', filename='images/orientation_highlight_1.jpg') }}" alt="Orientation Model Showcase" style="width: 100%; height: 320px; object-fit: cover; display: block;">
                 
-                <div style="position: absolute; top: -12px; left: 1rem; z-index: 10; background-color: var(--bg-card); border: var(--border-thin); font-family: var(--font-mono); font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.55rem; color: var(--text-muted); text-transform: uppercase;">
-                    EST. 2026
-                </div>
-
-                <div style="position: absolute; top: -12px; right: 2.5rem; z-index: 10; background-color: var(--bg-card); border: var(--border-thin); font-family: var(--font-mono); font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.55rem; color: var(--accent-red); text-transform: uppercase;">
-                    SPECIAL CLASSES
-                </div>
-
-                <div style="position: relative; z-index: 5; border: var(--border-thick); box-shadow: var(--shadow-lg); background-color: var(--bg-card); overflow: hidden; margin-top: 0.75rem;">
-                    <img src="{{ url_for('static', filename='images/club_launch_highlights.jpg') }}" alt="Orientation Highlights" style="width: 100%; height: 300px; object-fit: cover; display: block;">
-                    
-                    <div style="padding: 0.75rem 1rem; background-color: var(--bg-alt); border-top: var(--border-thin); display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-main);">
-                            <i class="fa-solid fa-camera"></i> Orientation Showcase
-                        </span>
-                        <span class="gnb-tag" style="font-size: 0.65rem;">CU UNNAO</span>
-                    </div>
-                </div>
-
-                <div style="position: absolute; bottom: -10px; left: 1.5rem; z-index: 10; background-color: var(--bg-card); border: var(--border-thin); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.45rem; color: var(--text-muted);">
-                    26.8467° N, 80.9462° E
-                </div>
-
-                <div style="position: absolute; bottom: -10px; right: 1.5rem; z-index: 10; background-color: var(--bg-card); border: var(--border-thin); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.45rem; color: var(--text-muted);">
-                    BUILT AT ROBO-X
-                </div>
-            </div>
-
-            <div class="gnb-card" style="padding: 0; overflow: hidden; border: var(--border-thick); box-shadow: var(--shadow-lg);">
-                <div style="padding: 0.85rem 1.15rem; background-color: var(--bg-alt); border-bottom: var(--border-thick); display: flex; align-items: center; justify-content: space-between;">
-                    <span style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 900; text-transform: uppercase;">
-                        <i class="fa-solid fa-play" style="color: var(--accent-red); margin-right: 0.4rem;"></i> Orientation Video &amp; Edit
+                <div style="padding: 0.85rem 1rem; background-color: var(--bg-alt); border-top: var(--border-thin); display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: var(--text-main);">
+                        <i class="fa-solid fa-rocket" style="color: var(--accent-red); margin-right: 0.35rem;"></i> Drone &amp; Rocket Demo
                     </span>
-                    <span class="gnb-tag gnb-tag-red" style="font-size: 0.65rem;"><i class="fa-solid fa-circle-dot"></i> HD REEL</span>
-                </div>
-
-                <div style="position: relative; width: 100%; height: 260px; background-color: #0b0c0e; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <video id="orientation-video" controls poster="{{ url_for('static', filename='images/UMC09728.jpg') }}" style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="{{ url_for('static', filename='videos/orientation_highlights.mp4') }}" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-
-                    <div id="orientation-play-overlay" onclick="toggleOrientationVideoPlay()" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(18, 20, 24, 0.55); display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: background 0.3s ease;">
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--accent-red); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; border: var(--border-thick); box-shadow: 0 0 20px rgba(217, 4, 41, 0.6); margin-bottom: 0.65rem; padding-left: 4px;">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <span style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 900; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                            WATCH ORIENTATION REEL
-                        </span>
-                    </div>
-                </div>
-
-                <div style="padding: 1rem 1.15rem; background-color: var(--bg-card); border-top: var(--border-thin);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
-                        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 900; text-transform: uppercase; margin: 0;">
-                            Orientation Classrooms Aftermovie
-                        </h4>
-                        <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 800; color: var(--text-muted);">
-                            <i class="fa-solid fa-clock"></i> 02:15 MIN
-                        </span>
-                    </div>
-                    <p style="font-family: var(--font-sans); font-size: 0.88rem; font-weight: 600; color: var(--text-muted); line-height: 1.4; margin: 0;">
-                        Watch the official recap edit covering live classroom demonstrations, hardware showcases, and student onboardings across CU Unnao.
-                    </p>
+                    <span class="gnb-tag" style="font-size: 0.65rem;">CU UNNAO</span>
                 </div>
             </div>
+
+            <!-- Highlight Box 2 -->
+            <div style="border: var(--border-thick); box-shadow: var(--shadow-md); background-color: var(--bg-card); overflow: hidden;">
+                <img src="{{ url_for('static', filename='images/orientation_highlight_2.jpg') }}" alt="Orientation Classroom Demo" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+                
+                <div style="padding: 0.85rem 1rem; background-color: var(--bg-alt); border-top: var(--border-thin); display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: var(--text-main);">
+                        <i class="fa-solid fa-users" style="color: var(--accent-red); margin-right: 0.35rem;"></i> Classroom Student Onboarding
+                    </span>
+                    <span class="gnb-tag" style="font-size: 0.65rem;">CU CLASSROOMS</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
