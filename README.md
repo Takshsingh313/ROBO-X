@@ -1,4 +1,5 @@
-# ROBO - X CLUB
-CU UP ROBO - X club site , 
-it's fully vibe coded  T_T,
-and some elements are hand made alsoo , efforts are there ......
+# CU ROBO-X CLUB
+AN OFFICIAL ROBOTICS CLUB OF CHANDIGARH UNIVERSITY LUCKNOW CAMPUS 
+**LEARN INNOVATE GROW**
+
+# JOIN US FOR MORE FUTURE EVENTS
